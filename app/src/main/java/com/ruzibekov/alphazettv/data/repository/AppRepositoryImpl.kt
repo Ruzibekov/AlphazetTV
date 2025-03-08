@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import com.ruzibekov.alphazettv.domain.repository.AppRepository
 import com.ruzibekov.alphazettv.domain.model.AppInfo
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 import kotlin.apply
@@ -11,7 +12,7 @@ import kotlin.collections.map
 import kotlin.collections.sortedBy
 
 class AppRepositoryImpl @Inject constructor(
-    private val context: Context
+    @ApplicationContext private val context: Context
 ) : AppRepository {
 
     override fun getInstalledApps() = flow {

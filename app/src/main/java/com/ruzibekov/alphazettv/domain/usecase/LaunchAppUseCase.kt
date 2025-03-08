@@ -2,11 +2,12 @@ package com.ruzibekov.alphazettv.domain.usecase
 
 import android.content.Context
 import android.content.Intent
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import kotlin.let
 
 class LaunchAppUseCase @Inject constructor(
-    private val context: Context
+    @ApplicationContext private val context: Context
 ) {
     operator fun invoke(packageName: String) {
         val packageManager = context.packageManager
