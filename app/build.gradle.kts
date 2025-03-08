@@ -51,7 +51,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(platform(libs.androidx.compose.bom))
@@ -60,6 +59,8 @@ dependencies {
     implementation(libs.androidx.tv.material)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
+    implementation(libs.datastore.pref)
+    implementation(libs.datastore.core)
     implementation(libs.dagger.hilt)
     kapt(libs.hilt.compiler)
     androidTestImplementation(platform(libs.androidx.compose.bom))
