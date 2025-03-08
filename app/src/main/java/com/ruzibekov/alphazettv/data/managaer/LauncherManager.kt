@@ -15,11 +15,10 @@ class LauncherManager @Inject constructor(
         val componentName = ComponentName(context, MainActivity::class.java)
         val packageManager = context.packageManager
 
-        val newState = if (enabled) {
+        val newState = if (enabled)
             PackageManager.COMPONENT_ENABLED_STATE_ENABLED
-        } else {
-            PackageManager.COMPONENT_ENABLED_STATE_DISABLED
-        }
+        else
+            PackageManager.COMPONENT_ENABLED_STATE_DISABLED_USER
 
         packageManager.setComponentEnabledSetting(
             componentName,

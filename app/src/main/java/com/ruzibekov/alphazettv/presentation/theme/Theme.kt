@@ -19,14 +19,16 @@ fun AlphazetTVTheme(
             primary = Purple80,
             secondary = PurpleGrey80,
             tertiary = Pink80,
-            onPrimary = Color.White
+            onPrimary = Color.White,
+            onSecondary = Color.Black
         )
     } else {
         lightColorScheme(
             primary = Purple40,
             secondary = PurpleGrey40,
             tertiary = Pink40,
-            onPrimary = Color.Black
+            onPrimary = Color.Black,
+            onSecondary = Color.White
         )
     }
     MaterialTheme(

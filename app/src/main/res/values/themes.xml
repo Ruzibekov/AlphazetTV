@@ -1,4 +1,6 @@
 <resources>
 
-    <style name="Theme.AlphazetTV" parent="Theme.AppCompat.DayNight.NoActionBar" />
+    <style name="Theme.AlphazetTV" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowShowWallpaper">true</item>
+    </style>
 </resources>

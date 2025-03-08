@@ -16,7 +16,7 @@ class SettingsDataStore @Inject constructor(
     private val isEnabledKey = booleanPreferencesKey("is_launcher_enabled")
 
     val isLauncherEnabled: Flow<Boolean> = context.dataStore.data
-        .map { preferences -> preferences[isEnabledKey] != false }
+        .map { preferences -> preferences[isEnabledKey] == true }
 
     suspend fun setLauncherEnabled(enabled: Boolean) {
         context.dataStore.edit { preferences ->
