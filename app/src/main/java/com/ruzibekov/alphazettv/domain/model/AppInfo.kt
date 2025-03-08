@@ -1,4 +1,4 @@
-package com.ruzibekov.alphazettv.domain
+package com.ruzibekov.alphazettv.domain.model
 
 import android.graphics.drawable.Drawable
 

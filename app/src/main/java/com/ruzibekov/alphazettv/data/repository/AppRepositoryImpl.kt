@@ -1,11 +1,14 @@
-package com.ruzibekov.alphazettv.data
+package com.ruzibekov.alphazettv.data.repository
 
 import android.content.Context
 import android.content.Intent
-import com.ruzibekov.alphazettv.domain.AppInfo
-import com.ruzibekov.alphazettv.domain.AppRepository
+import com.ruzibekov.alphazettv.domain.repository.AppRepository
+import com.ruzibekov.alphazettv.domain.model.AppInfo
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
+import kotlin.apply
+import kotlin.collections.map
+import kotlin.collections.sortedBy
 
 class AppRepositoryImpl @Inject constructor(
     private val context: Context
