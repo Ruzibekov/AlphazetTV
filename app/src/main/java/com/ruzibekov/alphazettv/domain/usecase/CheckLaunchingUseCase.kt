@@ -11,7 +11,7 @@ class CheckLaunchingUseCase @Inject constructor(
 ) {
     operator fun invoke(): Boolean {
         val intent = Intent(Intent.ACTION_MAIN).apply {
-            addCategory(Intent.CATEGORY_LEANBACK_LAUNCHER)
+            addCategory(Intent.CATEGORY_HOME)
         }
         val defaultHomeActivity = context.packageManager?.resolveActivity(
             intent, PackageManager.MATCH_DEFAULT_ONLY

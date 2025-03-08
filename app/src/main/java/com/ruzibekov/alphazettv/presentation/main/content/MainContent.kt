@@ -4,7 +4,6 @@ import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.focusable
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -55,20 +54,11 @@ object MainContent {
         sendAction: (MainAction) -> Unit,
     ) {
         Crossfade(state.isLauncherEnabled, label = "main screen") { enabled ->
-            if (enabled)
-                AppsView(
-                    apps = state.apps,
-                    onItemClick = {
-                        sendAction(MainAction.OnAppClick(it))
-                    },
-                    onDisableClick = {
-                        sendAction(MainAction.OpenHomeLaunchSettings)
-                    }
-                )
-            else
-                EnableView(onClick = {
-                    sendAction(MainAction.OpenHomeLaunchSettings)
-                })
+            if (enabled) AppsView(apps = state.apps, onItemClick = {
+                sendAction(MainAction.OnAppClick(it))
+            }, onDisableClick = {
+                sendAction(MainAction.OpenHomeLaunchSettings)
+            })
         }
     }
 
@@ -102,15 +92,14 @@ object MainContent {
             }
         }
 
-        if (showDialog.value)
-            DisableLauncherDialog(
-                onDoneClick = {
-                    onDisableClick()
-                },
-                onDismiss = {
-                    showDialog.value = false
-                },
-            )
+        if (showDialog.value) DisableLauncherDialog(
+            onDoneClick = {
+                onDisableClick()
+            },
+            onDismiss = {
+                showDialog.value = false
+            },
+        )
     }
 
     @OptIn(ExperimentalTvMaterial3Api::class)
@@ -139,8 +128,7 @@ object MainContent {
                         onClick = {
                             onDoneClick()
                             onDismiss()
-                        },
-                        textRes = R.string.done_btn
+                        }, textRes = R.string.done_btn
                     )
                 }
             }
@@ -180,9 +168,7 @@ object MainContent {
     @OptIn(ExperimentalTvMaterial3Api::class)
     @Composable
     private fun Item(
-        app: AppInfo,
-        onClick: () -> Unit,
-        modifier: Modifier = Modifier
+        app: AppInfo, onClick: () -> Unit, modifier: Modifier = Modifier
     ) {
         Column(
             modifier = modifier
@@ -202,19 +188,6 @@ object MainContent {
                 overflow = TextOverflow.Ellipsis,
                 textAlign = TextAlign.Center,
                 color = MaterialTheme.colorScheme.onPrimary
-            )
-        }
-    }
-
-    @Composable
-    private fun EnableView(onClick: () -> Unit) {
-        Box(
-            modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
-        ) {
-            ButtonView.Default(
-                onClick = onClick,
-                textRes = R.string.enable_launcher
             )
         }
     }
