@@ -20,7 +20,6 @@ class AppRepositoryImpl @Inject constructor(
         val intent = Intent(Intent.ACTION_MAIN, null).apply {
             addCategory(Intent.CATEGORY_LEANBACK_LAUNCHER)
         }
-
         val apps = packageManager.queryIntentActivities(intent, 0)
             .map { resolveInfo ->
                 AppInfo(

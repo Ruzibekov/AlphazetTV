@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AlphazetTV</string>
+    <string name="enable_launcher">Enable Launcher</string>
 </resources>

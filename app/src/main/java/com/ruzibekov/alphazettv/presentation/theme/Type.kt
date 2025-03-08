@@ -1,4 +1,4 @@
-package com.ruzibekov.alphazettv.ui.theme
+package com.ruzibekov.alphazettv.presentation.theme
 
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
